@@ -2,44 +2,50 @@
 
 # Retail Insights Dashboard
 
-### 📊 Project Overview
-Retail Insights Dashboard is an interactive Streamlit application that provides a comprehensive statistical analysis of retail sales data. It’s designed to help retail managers and data analysts quickly explore sales performance across product categories, identify trends, and make data-driven decisions.
+Retail Insights Dashboard is a Streamlit application that performs end-to-end analysis of retail sales data—generating synthetic data, computing key statistics, running hypothesis tests, and producing interactive visualizations.
 
-### 🔑 Key Features
-#### Descriptive Statistics
+## Key Components:
 
-Calculates count, mean, median, mode, standard deviation, and quartiles for units sold.
+### Data Generation & Ingestion
 
-Breaks down total, average, and variability of sales by category.
+Simulates sales for 20 products across 4 categories (Electronics, Clothing, Home, Sports) using a Poisson distribution (λ=20) for units sold and a 20-day date range (2023-01-01 to 2023-01-20). 
 
-Implemented in app.py using Pandas and NumPy for fast, in-memory computation. 
+## Statistical Analysis
 
-#### Inferential Statistics
+### Descriptive statistics:
 
-Computes a 95% confidence interval for the mean units sold.
+Count: 20
 
-Performs a one-sample t-test against a target mean (e.g., 20 units) to determine statistical significance.
+Mean units sold: 18.8
 
-Powered by SciPy’s statistical functions to deliver reliable hypothesis testing. 
+Median: 18.5
 
-#### Interactive Visualizations
+Mode: 17
 
-Histogram with KDE overlay, annotated with mean, median, and mode.
+Std Dev: 3.30
 
-Boxplot showing distribution and outliers of units sold by category.
+## Category breakdown:
 
-Bar Plot summarizing total units sold per category.
+Home (Total: 181; Avg: 20.11; SD: 3.72)
 
-Built with Matplotlib and Seaborn and seamlessly embedded into the dashboard. 
+Sports (Total: 101; Avg: 16.83; SD: 2.71)
 
-#### Synthetic Data Generation
+Electronics (Total: 73; Avg: 18.25; SD: 2.22)
 
-Simulates a realistic retail dataset of 20 products across four categories (Electronics, Clothing, Home, Sports) using a Poisson distribution.
+Clothing (Total: 21; Avg: 21.00; SD: N/A)
 
-Ensures reproducibility with a fixed random seed.
+## Inferential statistics:
 
-Defined in the generate_data() function of the Streamlit app. 
+95% confidence interval for mean units sold: (17.25, 20.35)
 
-#### Business Context 
+One-sample t-test vs. target mean of 20: t = –1.63, p = 0.1206 (fail to reject H₀) 
 
-Clear business use case: “Optimize inventory and marketing by understanding sales patterns.”
+## Interactive Visualizations
+
+Histogram with KDE overlay, annotated with mean/median/mode
+
+Boxplots of units sold by category
+
+Bar chart of total units sold per category
+
+All rendered live in the Streamlit UI using Matplotlib and Seaborn ding sales patterns.”
